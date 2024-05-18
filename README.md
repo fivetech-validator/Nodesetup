@@ -227,7 +227,15 @@ sedad q bank balances $(sedad keys show wallet -a)
 👷 Validator management
 Please make sure you have adjusted moniker, identity, details and website to match your values.
 
-CREATE NEW VALIDATOR
+Create Validator
+Obtain your validator public key by running the following command:
+
+```
+sedad comet show-validator
+```
+The output will be similar to this (with a different key):
+
+{"@type":"/cosmos.crypto.ed25519.PubKey","key":"lR1d7YBVK5jYijOfWVKRFoWCsS4dg3kagT7LB9GnG8I="}
 ```
 sedad tx staking create-validator \
 --amount 1000000aseda \
