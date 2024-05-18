@@ -236,13 +236,14 @@ sedad comet show-validator
 The output will be similar to this (with a different key):
 
 {"@type":"/cosmos.crypto.ed25519.PubKey","key":"lR1d7YBVK5jYijOfWVKRFoWCsS4dg3kagT7LB9GnG8I="}
-```
+
 Then, create a file named validator.json with the following content:
 
 ```
 nano $HOME/validator.json
 ```
 Change your info, from "pubkey" to "details"  and Save them
+```
 {    
     "pubkey": {"@type":"/cosmos.crypto.ed25519.PubKey","key":"i5rgI5rkbgFKty+RjuK5UP7bLAbDuykP9cXTTAPMeAc="},
     "amount": "1000000aseda",
