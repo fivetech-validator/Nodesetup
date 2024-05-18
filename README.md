@@ -237,39 +237,33 @@ The output will be similar to this (with a different key):
 
 {"@type":"/cosmos.crypto.ed25519.PubKey","key":"lR1d7YBVK5jYijOfWVKRFoWCsS4dg3kagT7LB9GnG8I="}
 ```
-sedad tx staking create-validator \
---amount 1000000aseda \
---pubkey $(sedad tendermint show-validator) \
---moniker "YOUR_MONIKER_NAME" \
---identity "YOUR_KEYBASE_ID" \
---details "YOUR_DETAILS" \
---website "YOUR_WEBSITE_URL" \
---chain-id seda-1 \
---commission-rate 0.05 \
---commission-max-rate 0.20 \
---commission-max-change-rate 0.05 \
---min-self-delegation 1 \
---from wallet \
---gas-adjustment 1.4 \
---gas auto \
---gas-prices 10000000000aseda \
--y
+Then, create a file named validator.json with the following content:
+
+```
+nano $HOME/validator.json
+```
+Change your info, from "pubkey" to "details"  and Save them
+{    
+    "pubkey": {"@type":"/cosmos.crypto.ed25519.PubKey","key":"i5rgI5rkbgFKty+RjuK5UP7bLAbDuykP9cXTTAPMeAc="},
+    "amount": "1000000aseda",
+    "moniker": "FIVETECH",
+    "identity": "495CADCFB1CC4C00",
+    "website": "https://linktr.ee/fivetech_validator",
+    "security": "https://t.me/fivetech_validator",
+    "details": "Crypto VN No1",
+    "commission-rate": "0.01",
+    "commission-max-rate": "0.2",
+    "commission-max-change-rate": "0.01",
+    "min-self-delegation": "1"
+}
 ```
 
-EDIT EXISTING VALIDATOR
+Finally, we're ready to submit the transaction to create the validator:
 ```
-sedad tx staking edit-validator \
---new-moniker "YOUR_MONIKER_NAME" \
---identity "YOUR_KEYBASE_ID" \
---details "YOUR_DETAILS" \
---website "YOUR_WEBSITE_URL" \
---chain-id seda-1 \
---commission-rate 0.05 \
---from wallet \
---gas-adjustment 1.4 \
---gas auto \
---gas-prices 10000000000aseda \
--y
+sedad tx staking create-validator $HOME/validator.json \
+--from=wallet \
+--chain-id=seda-1 \
+--fees=2000000000000000aseda 
 ```
 
 UNJAIL VALIDATOR
