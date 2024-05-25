@@ -1,5 +1,7 @@
 # #How to Set Up Ping.Pub Explorer
 
+buy Domains: https://www.namecheap.com/
+Add Dns Domain: https://www.cloudflare.com/
 
 Install Dependencies
 Remove any existing versions of Node.js and install the required packages:
