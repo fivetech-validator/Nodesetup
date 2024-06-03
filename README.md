@@ -19,13 +19,13 @@ source $HOME/.bash_profile
 go version
 ```
 
-Build 31.05.24
+Build 03.06.24
 
 ```
 cd $HOME && mkdir -p go/bin/
 git clone https://github.com/aura-nw/aura
 cd aura
-git checkout v0.8.2
+git checkout v0.8.3
 make install
 ```
 
