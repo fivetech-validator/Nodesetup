@@ -161,10 +161,10 @@ rm -rf $(which aurad)
 Upgrade
 ```
 cd $HOME/aura && git pull
-git checkout v0.8.2
+git checkout v0.8.3
 make install
 aurad version --long | grep -e commit -e version
-#version: v0.8.2
+#version: v0.8.3
 #commit: f904836400b0fb2bedccf6283f5c0b720d8aa932
 sudo systemctl restart aurad && journalctl -fu aurad -o cat
 #consensus
