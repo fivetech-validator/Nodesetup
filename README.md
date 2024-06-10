@@ -183,3 +183,17 @@ sudo rm -f /usr/local/bin/nibid
 sudo rm -f $(which nibid)
 sudo rm -rf $HOME/.nibid
 ```
+
+**Upgrade**
+```
+cd $HOME/nibiru/
+git fetch --all
+git checkout v1.4.0
+make install
+nibid version --long | grep -e commit -e version
+#version: v1.4.0
+#commit: 9ff225a9859731e9547966dbc7c41f23e00d6b36
+systemctl restart nibid && journalctl -fu nibid -o cat
+#consensus
+curl -s http://localhost:26657/consensus_state  | jq '.result.round_state.height_vote_set[0].prevotes_bit_array'
+```
