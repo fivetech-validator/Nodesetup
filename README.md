@@ -40,7 +40,7 @@ cd $HOME
 rm -rf nibiru
 git clone https://github.com/NibiruChain/nibiru.git
 cd nibiru
-git checkout v1.3.0
+git checkout v1.4.0
 
 make build
 
