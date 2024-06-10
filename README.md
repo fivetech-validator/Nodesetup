@@ -12,7 +12,7 @@ Discord: https://discord.com/invite/nibirufi
 
 #### Services
 
-https://explorer.nodestake.org/nibiru
+https://explorer.fivetech.pro/Nibiru-mainnet
 
 #Setup validator name
 ```
