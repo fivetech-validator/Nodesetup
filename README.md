@@ -101,7 +101,7 @@ bandd keys list
 ```
 Delete key
 ```
-bandd keys delete your-wallet
+bandd keys delete wallet
 ```
 Export key to a file
 ```
@@ -113,7 +113,7 @@ bandd keys import wallet wallet.backup
 ```
 Query your-wallet balance
 ```
-bandd q bank balances $(bandd keys show your-wallet -a)
+bandd q bank balances $(bandd keys show wallet -a)
 ```
 
 Validator management
@@ -132,7 +132,7 @@ bandd tx staking create-validator \
 --commission-max-rate 0.20 \
 --commission-max-change-rate 0.05 \
 --min-self-delegation 1 \
---from your-wallet \
+--from wallet \
 --gas-adjustment 1.4 \
 --gas auto \
 --gas-prices 0.0025uband \
@@ -148,7 +148,7 @@ bandd tx staking edit-validator \
 --website "YOUR_WEBSITE_URL" \
 --chain-id laozi-mainnet \
 --commission-rate 0.05 \
---from your-wallet \
+--from wallet \
 --gas-adjustment 1.4 \
 --gas auto \
 --gas-prices 0.0025uband \
@@ -172,36 +172,36 @@ bandd q staking validators -oj --limit=3000 | jq '.validators[] | select(.status
 ```
 View validator details
 ```
-bandd q staking validator $(bandd keys show your-wallet --bech val -a)
+bandd q staking validator $(bandd keys show wallet --bech val -a)
 ```
 Token management
 Withdraw rewards from all validators
 ```
-bandd tx distribution withdraw-all-rewards --from your-wallet --chain-id bandd --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
+bandd tx distribution withdraw-all-rewards --from wallet --chain-id bandd --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
 ```
 Withdraw commission and rewards from your validator
 ```
-bandd tx distribution withdraw-rewards $(bandd keys show your-wallet --bech val -a) --commission --from your-wallet --chain-id bandd --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
+bandd tx distribution withdraw-rewards $(bandd keys show wallet --bech val -a) --commission --from your-wallet --chain-id bandd --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
 ```
 Delegate tokens to yourself
 ```
-bandd tx staking delegate $(bandd keys show your-wallet --bech val -a) 1000000uom --from your-wallet --chain-id bandd --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
+bandd tx staking delegate $(bandd keys show wallet --bech val -a) 1000000uom --from your-wallet --chain-id bandd --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
 ```
 Delegate tokens to validator
 ```
-bandd tx staking delegate  1000000uom --from your-wallet --chain-id bandd --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
+bandd tx staking delegate  1000000uom --from wallet --chain-id bandd --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
 ```
 Redelegate tokens to another validator
 ```
-bandd tx staking redelegate $(bandd keys show your-wallet --bech val -a)  1000000uom --from your-wallet --chain-id bandd --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
+bandd tx staking redelegate $(bandd keys show wallet --bech val -a)  1000000uom --from wallet --chain-id bandd --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
 ```
 Unbond tokens from your validator
 ```
-bandd tx staking unbond $(bandd keys show your-wallet --bech val -a) 1000000uom --from your-wallet --chain-id bandd --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
+bandd tx staking unbond $(bandd keys show wallet --bech val -a) 1000000uom --from wallet --chain-id bandd --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
 ```
 Send tokens to the your-wallet
 ```
-bandd tx bank send your-wallet  1000000uom --from your-wallet --chain-id bandd --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
+bandd tx bank send wallet  1000000uom --from wallet --chain-id bandd --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
 ```
 Governance
 List all proposals
@@ -214,19 +214,19 @@ bandd query gov proposal 1
 ```
 Vote ‘Yes’
 ```
-bandd tx gov vote 1 yes --from your-wallet --chain-id laozi-mainnet --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
+bandd tx gov vote 1 yes --from wallet --chain-id laozi-mainnet --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
 ```
 Vote ‘No’
 ```
-bandd tx gov vote 1 no --from your-wallet --chain-id laozi-mainnet --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
+bandd tx gov vote 1 no --from wallet --chain-id laozi-mainnet --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
 ```
 Vote ‘Abstain’
 ```
-bandd tx gov vote 1 abstain --from your-wallet --chain-id laozi-mainnet --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
+bandd tx gov vote 1 abstain --from wallet --chain-id laozi-mainnet --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
 ```
 Vote ‘NoWithVeto’
 ```
-bandd tx gov vote 1 NoWithVeto --from your-wallet --chain-id laozi-mainnet --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
+bandd tx gov vote 1 NoWithVeto --from wallet --chain-id laozi-mainnet --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
 ```
 Utility
 Update ports CUSTOM_PORT=110
@@ -267,7 +267,7 @@ echo $(bandd tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/.ba
 ```
 Check if validator key is correct
 ```
-[ $(bandd q staking validator $(bandd keys show your-wallet --bech val -a) -oj | jq -r .consensus_pubkey.key) = $(bandd status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "\n\e[1m\e[32mTrue\e[0m\n" || echo -e "\n\e[1m\e[31mFalse\e[0m\n"
+[ $(bandd q staking validator $(bandd keys show wallet --bech val -a) -oj | jq -r .consensus_pubkey.key) = $(bandd status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "\n\e[1m\e[32mTrue\e[0m\n" || echo -e "\n\e[1m\e[31mFalse\e[0m\n"
 ```
 Get live peers
 ```
