@@ -1,4 +1,4 @@
-# Nodesetup
+# BAND-MAINNET
 Install dependencies
 ```
 sudo apt update && sudo apt upgrade -y
