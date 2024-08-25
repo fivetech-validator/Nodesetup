@@ -177,31 +177,31 @@ bandd q staking validator $(bandd keys show wallet --bech val -a)
 Token management
 Withdraw rewards from all validators
 ```
-bandd tx distribution withdraw-all-rewards --from wallet --chain-id bandd --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
+bandd tx distribution withdraw-all-rewards --from wallet --chain-id laozi-mainnet --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
 ```
 Withdraw commission and rewards from your validator
 ```
-bandd tx distribution withdraw-rewards $(bandd keys show wallet --bech val -a) --commission --from your-wallet --chain-id bandd --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
+bandd tx distribution withdraw-rewards $(bandd keys show wallet --bech val -a) --commission --from your-wallet --chain-id laozi-mainnet --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
 ```
 Delegate tokens to yourself
 ```
-bandd tx staking delegate $(bandd keys show wallet --bech val -a) 1000000uband --from wallet --chain-id bandd --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
+bandd tx staking delegate $(bandd keys show wallet --bech val -a) 1000000uband --from wallet --chain-id laozi-mainnet --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
 ```
 Delegate tokens to validator
 ```
-bandd tx staking delegate  1000000uom --from wallet --chain-id bandd --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
+bandd tx staking delegate  1000000uom --from wallet --chain-id laozi-mainnet --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
 ```
 Redelegate tokens to another validator
 ```
-bandd tx staking redelegate $(bandd keys show wallet --bech val -a)  1000000uom --from wallet --chain-id bandd --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
+bandd tx staking redelegate $(bandd keys show wallet --bech val -a)  1000000uom --from wallet --chain-id laozi-mainnet --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
 ```
 Unbond tokens from your validator
 ```
-bandd tx staking unbond $(bandd keys show wallet --bech val -a) 1000000uom --from wallet --chain-id bandd --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
+bandd tx staking unbond $(bandd keys show wallet --bech val -a) 1000000uom --from wallet --chain-id laozi-mainnet --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
 ```
 Send tokens to the your-wallet
 ```
-bandd tx bank send wallet  1000000uom --from wallet --chain-id bandd --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
+bandd tx bank send wallet  1000000uom --from wallet --chain-id laozi-mainnet --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
 ```
 Governance
 List all proposals
