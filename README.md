@@ -185,7 +185,7 @@ bandd tx distribution withdraw-rewards $(bandd keys show wallet --bech val -a) -
 ```
 Delegate tokens to yourself
 ```
-bandd tx staking delegate $(bandd keys show wallet --bech val -a) 1000000uom --from your-wallet --chain-id bandd --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
+bandd tx staking delegate $(bandd keys show wallet --bech val -a) 1000000uband --from wallet --chain-id bandd --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
 ```
 Delegate tokens to validator
 ```
