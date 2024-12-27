@@ -256,5 +256,5 @@ sourced tx slashing unjail --from wallet --chain-id source-1 --gas 350000 --fees
 
 claim phí node
 ```
-sourced tx distribution withdraw-rewards sourcevaloper130wjchtwnx49utu7d8jkpw28seq23sy7yz07eh --from wallet --commission --chain-id source-1 --gas auto --gas-adjustment 1.5 --fees=50000usource -y 
+sourced tx distribution withdraw-rewards sourcevaloper130wjchtwnx49utu7d8jkpw28seq23sy7yz07eh --from wallet --commission --chain-id source-1 --gas auto --gas-adjustment 1.5 --fees=500000usource -y 
 ```
