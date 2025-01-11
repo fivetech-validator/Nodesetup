@@ -218,11 +218,9 @@ Your Peer
 ```
 echo $(aurad tendermint show-node-id)'@'$(wget -qO- eth0.me)':'$(cat $HOME/.aura/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')
 
+```
 
-Check all keys
-```
-aurad keys list
-```
+
 
 Check Balance
 ```
@@ -269,6 +267,8 @@ Your Valcons-Address
 aurad tendermint show-address
 ```
 
+Unjail
+```
 aurad tx slashing unjail --from wallet --chain-id aura_6322-2 --gas 350000 --fees "97500"uaura -y
 ```
 
