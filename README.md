@@ -269,7 +269,7 @@ Your Valcons-Address
 aurad tendermint show-address
 ```
 
-**Unjail**
+Unjail
 ```
 aurad tx slashing unjail --from wallet --chain-id aura_6322-2 --gas 350000 --fees "97500"uaura -y
 ```
