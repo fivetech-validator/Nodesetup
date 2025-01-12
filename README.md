@@ -238,3 +238,15 @@ rm -f $(which medasdigitald)
 rm -rf .medasdigital
 rm -rf medasdigital
 ```
+
+Snapshot
+```
+sudo apt install lz4 -y
+sudo systemctl stop medasdigitald
+cp $HOME/.medasdigital/data/priv_validator_state.json $HOME/.medasdigital/priv_validator_state.json.backup
+rm -rf $HOME/.medasdigital/data 
+curl -L https://snapshots.whenmoonwhenlambo.money/medasdigital-2/medasdigital-2-snapshot-latest.tar.lz4  | lz4 -dc - | tar -xf - -C $HOME/.medasdigital
+mv $HOME/.medasdigital/priv_validator_state.json.backup $HOME/.medasdigital/data/priv_validator_state.json
+sudo systemctl restart medasdigitald
+sudo journalctl -u medasdigitald -f -o cat
+```
