@@ -156,8 +156,8 @@ medasdigitald tx staking create-validator $HOME/.medasdigital/validator.json \
 Edit Validator
 ```
 medasdigitald tx staking edit-validator \
---new-moniker="Vinjan.Inc" \
---identity="7C66E36EA2B71F68" \
+--new-moniker="FIVETECH" \
+--identity="495CADCFB1CC4C00" \
 --commission-rate="0.1" \
 --chain-id=medasdigital-2 \
 --from=wallet \
