@@ -182,6 +182,9 @@ Withdraw Rewards with Comission
 ```
 medasdigitald tx staking delegate $(medasdigitald keys show wallet --bech val -a) --commission --from wallet --chain-id medasdigital-2 --gas-adjustment 1.5 --gas-prices 0.025umedas  --gas auto
 ```
+```
+medasdigitald tx distribution withdraw-rewards $(medasdigitald keys show wallet --bech val -a) --commission --from wallet --chain-id medasdigital-2 --gas-prices 0.25umedas  --gas-adjustment 1.5 --gas "auto" -y 
+```
 Delegate Token to your own validator
 ```
 medasdigitald tx staking delegate $(medasdigitald keys show wallet --bech val -a) 1000000umedas --from wallet --chain-id medasdigital-2 --gas-adjustment 1.5 --gas-prices 0.025umedas  --gas auto
