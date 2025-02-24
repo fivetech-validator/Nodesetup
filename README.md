@@ -197,3 +197,13 @@ systemctl restart nibid && journalctl -fu nibid -o cat
 #consensus
 curl -s http://localhost:26657/consensus_state  | jq '.result.round_state.height_vote_set[0].prevotes_bit_array'
 ```
+
+Unjail validator
+```
+nibid tx slashing unjail --from wallet --chain-id cataclysm-1 --gas-adjustment 1.4 --gas auto
+```
+
+Withdraw rewards from all validators
+```
+nibid tx distribution withdraw-all-rewards --from wallet --chain-id cataclysm-1 --gas-adjustment 1.4 --gas auto --gas-prices 0.025unibi -y
+```
