@@ -111,8 +111,13 @@ sed -i -e "s%^address = \"tcp://localhost:1317\"%address = \"tcp://0.0.0.0:13917
 
 #Download latest chain snapshot
 ```
-curl -L https://snapshots.kjnodes.com/nibiru/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.nibid
-[[ -f $HOME/.nibid/data/upgrade-info.json ]] && cp $HOME/.nibid/data/upgrade-info.json $HOME/.nibid/cosmovisor/genesis/upgrade-info.json
+sudo systemctl stop nibiru.service
+cp $HOME/.nibid/data/priv_validator_state.json $HOME/.nibid/priv_validator_state.json.backup
+rm -rf $HOME/.nibid/data
+curl -L https://snapshots.whenmoonwhenlambo.money/cataclysm-1/cataclysm-1-snapshot-latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.nibid
+mv $HOME/.nibid/priv_validator_state.json.backup $HOME/.nibid/data/priv_validator_state.json
+sudo systemctl start nibiru.service && sudo journalctl -fu nibiru.service -o cat
+
 ```
 
 #Start service and check the logs
