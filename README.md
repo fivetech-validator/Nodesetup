@@ -29,7 +29,7 @@ sudo apt -qy upgrade
 #INSTALL GO
 ```
 sudo rm -rf /usr/local/go
-curl -Ls https://go.dev/dl/go1.21.10.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
+curl -Ls https://go.dev/dl/go1.24.0.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
 eval $(echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee /etc/profile.d/golang.sh)
 eval $(echo 'export PATH=$PATH:$HOME/go/bin' | tee -a $HOME/.profile)
 ```
@@ -40,7 +40,7 @@ cd $HOME
 rm -rf nibiru
 git clone https://github.com/NibiruChain/nibiru.git
 cd nibiru
-git checkout v1.4.0
+git checkout v2.3.0
 
 make build
 
