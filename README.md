@@ -205,7 +205,7 @@ curl -s http://localhost:26657/consensus_state  | jq '.result.round_state.height
 
 Unjail validator
 ```
-nibid tx slashing unjail --from wallet --chain-id cataclysm-1 --gas-adjustment 1.4 --gas auto
+nibid tx slashing unjail --from wallet --chain-id cataclysm-1 --gas 350000 --fees "97500"unibi -y
 ```
 
 Withdraw rewards from all validators
