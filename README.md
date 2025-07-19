@@ -197,11 +197,15 @@ dungeond tx staking create-validator $HOME/.dungeonchain/validator.json \
 --gas auto
 ```
 
-lệnh thoát tù
+Unjail Validator
 ```
 dungeond tx slashing unjail --from wallet --chain-id dungeon-1 --gas 350000 --fees "97500"udgn -y
 ```
 
+Withdraw all rewards from all validators
 
+```
+dungeond tx distribution withdraw-all-rewards --from wallet --chain-id dungeon-1 --gas 350000 -y
+```
 
 
