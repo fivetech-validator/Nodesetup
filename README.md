@@ -208,4 +208,10 @@ Withdraw all rewards from all validators
 dungeond tx distribution withdraw-all-rewards --from wallet --chain-id dungeon-1 --gas 350000 -y
 ```
 
+Withdraw and commission from your Validator
+```
+dungeond tx distribution withdraw-rewards dungeonvaloper14ka9c4pdyz8kchkfvz6ae0guvcz0rfk4yntsjw --from wallet --gas 350000 --chain-id=dungeon-1 --commission -y
+```
+
+
 
