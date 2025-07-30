@@ -122,7 +122,7 @@ kyved tx staking create-validator \
 --amount 1000000ukyve \
 --moniker="FIVETECH" \
 --identity="495CADCFB1CC4C00" \
---website="https://linktr.ee/fivetech_validator" \
+--website="https://explorer.fivetech.pro/" \
 --details="CRYPTO VN NO1" \
 --commission-rate "0.05" \
 --commission-max-rate "0.20" \
@@ -142,7 +142,7 @@ kyved tx staking edit-validator \
 --new-moniker="FIVETECH" \
 --identity="495CADCFB1CC4C00" \
 --details="CRYPTO VN NO1" \
---website="https://linktr.ee/fivetech_validator" \
+--website="https://explorer.fivetech.pro/" \
 --chain-id kyve-1 \
 --commission-rate 0.05 \
 --from wallet \
