@@ -17,7 +17,9 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 go version
 ```
-#DOWNLOAD VÀ CÀI ĐẶT DỮ LIỆU NODE KYVE
+
+# DOWNLOAD VÀ CÀI ĐẶT DỮ LIỆU NODE KYVE
+
 ```
 cd $HOME
 wget https://github.com/KYVENetwork/chain/releases/download/v2.1.0/kyved_mainnet_linux_amd64.tar.gz
@@ -32,25 +34,25 @@ kyved init FIVETECH --chain-id kyve-1
 kyved config chain-id kyve-1
 ```
 
-	#CÁC LỆNH VỀ VÍ
+# CÁC LỆNH VỀ VÍ
 
-#TẠO VÍ MỚI
+# TẠO VÍ MỚI
 ```
 kyved keys add wallet
 ```
 
-#RECOVER VÍ CŨ
+# RECOVER VÍ CŨ
 ```
 kyved keys add wallet --recover
 ```
 
-	#DOWNLOAD FILE GENESIS
+# DOWNLOAD FILE GENESIS
 
 ```
 curl https://raw.githubusercontent.com/KYVENetwork/networks/main/kyve-1/genesis.json > ~/.kyve/config/genesis.json
 ```
 
-	#CÀI ĐẶT  minimum gas price and Peers/Seeds/Filter peers/MaxPeers
+# CÀI ĐẶT  minimum gas price and Peers/Seeds/Filter peers/MaxPeers
 ```
 sed -i -e "s/^filter_peers *=.*/filter_peers = \"true\"/" $HOME/.kyve/config/config.toml
 seeds=""
@@ -59,12 +61,12 @@ sed -i.bak -e "s/^seeds *=.*/seeds = \"$seeds\"/; s/^persistent_peers *=.*/persi
 sed -i 's/max_num_inbound_peers =.*/max_num_inbound_peers = 50/g' $HOME/.kyve/config/config.toml
 sed -i 's/max_num_outbound_peers =.*/max_num_outbound_peers = 50/g' $HOME/.kyve/config/config.toml
 ```
-	#DOWNLOAD ADDRBOOK
+# DOWNLOAD ADDRBOOK
 ```
 wget -O $HOME/.kyve/config/addrbook.json "https://raw.githubusercontent.com/nodersteam/cosmos-adrbook/main/kyve/addrbook.json"
 ```
 
-	#TẠO FILE DỮ LIỆU (Create a service file)
+# TẠO FILE DỮ LIỆU (Create a service file)
 
 ```
 sudo tee /etc/systemd/system/kyved.service > /dev/null <<EOF
@@ -85,7 +87,7 @@ EOF
 ```
 
 
-	#SỬ DỤNG STATESYNC(Use our StateSync)
+# SỬ DỤNG STATESYNC(Use our StateSync)
 
 ```
 sudo systemctl stop kyved
