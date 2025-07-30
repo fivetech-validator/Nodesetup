@@ -29,7 +29,7 @@ rm kyved_mainnet_linux_amd64.tar.gz
 sudo mv kyved $HOME/go/bin/kyved
 ```
 # CÀI CẶT NODE
-
+```
 kyved init FIVETECH --chain-id kyve-1
 kyved config chain-id kyve-1
 ```
