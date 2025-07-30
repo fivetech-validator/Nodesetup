@@ -1,5 +1,4 @@
-# Nodesetup
-SETUP VALIDATOR KYVE
+# SETUP VALIDATOR KYVE
 
 # cài đặt các ứng dụng cần thiết và update ubuntu
 ```
@@ -7,7 +6,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc git jq chrony liblz4-tool -y
 ```	
 
-	# CÀI ĐẶT GO
+# CÀI ĐẶT GO
 ```
 ver="1.23.5"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
@@ -18,7 +17,7 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 go version
 ```
-	#DOWNLOAD VÀ CÀI ĐẶT DỮ LIỆU NODE KYVE
+#DOWNLOAD VÀ CÀI ĐẶT DỮ LIỆU NODE KYVE
 ```
 cd $HOME
 wget https://github.com/KYVENetwork/chain/releases/download/v2.1.0/kyved_mainnet_linux_amd64.tar.gz
@@ -27,7 +26,7 @@ chmod +x kyved
 rm kyved_mainnet_linux_amd64.tar.gz
 sudo mv kyved $HOME/go/bin/kyved
 ```
-	# CÀI CẶT NODE
+# CÀI CẶT NODE
 
 kyved init FIVETECH --chain-id kyve-1
 kyved config chain-id kyve-1
