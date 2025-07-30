@@ -139,10 +139,10 @@ kyved tx staking create-validator \
 	#edit
 ```
 kyved tx staking edit-validator \
---new-moniker="FIVETECH" \
---identity="495CADCFB1CC4C00" \
---details="CRYPTO VN NO1" \
---website="https://explorer.fivetech.pro/" \
+--new-moniker "FIVETECH" \
+--identity "495CADCFB1CC4C00" \
+--details "CRYPTO VN NO1" \
+--website "https://explorer.fivetech.pro/" \
 --chain-id kyve-1 \
 --commission-rate 0.05 \
 --from wallet \
