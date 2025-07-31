@@ -8,14 +8,14 @@ Install Go
 ```
 cd $HOME
 sudo rm -rf /usr/local/go
-wget https://go.dev/dl/go1.21.11.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.21.11.linux-amd64.tar.gz
+wget https://go.dev/dl/go1.24.2.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.24.2.linux-amd64.tar.gz
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source ~/.bash_profile
 [ ! -d ~/go/bin ] && mkdir -p ~/go/bin
 go version
 which go
-rm -rf go1.21.11.linux-amd64.tar.gz
+rm -rf go1.4.2.linux-amd64.tar.gz
 ```
 
 Download and build binary
@@ -24,7 +24,7 @@ cd $HOME
 rm -rf chain
 git clone https://github.com/bandprotocol/chain
 cd chain
-git checkout v2.5.4
+git checkout v3.1.0
 make install
 bandd version
 which bandd
