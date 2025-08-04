@@ -156,7 +156,8 @@ bandd tx staking edit-validator \
 ```
 Unjail validator
 ```
-bandd tx slashing unjail --from wallet --chain-id laozi-mainnet --gas-adjustment 1.4 --gas auto --gas-prices 0.0025uband -y
+bandd tx slashing unjail --from wallet --chain-id laozi-mainnet --gas 350000 --fees 975000uband -y
+
 ```
 Jail reason
 ```
