@@ -337,7 +337,7 @@ Band Node Snapshot ( EDIT HTTP)
 sudo systemctl stop bandd
 
 cp $HOME/.band/data/priv_validator_state.json $HOME/.band/priv_validator_state.json.backup
-curl https://snapshots.polkachu.com/snapshots/band/band_32146450.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.band
+curl https://snapshots.polkachu.com/snapshots/band/band_46142930.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.band
 mv $HOME/.band/priv_validator_state.json.backup $HOME/.band/data/priv_validator_state.json
 
 sudo systemctl restart bandd && sudo journalctl -u bandd -f --no-hostname -o cat
