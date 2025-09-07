@@ -364,7 +364,7 @@ cp $HOME/.band/priv_validator_state.json.backup $HOME/.band/data/priv_validator_
 sudo systemctl restart bandd && sudo journalctl -u bandd -f
 ```
 
-# SNAPSHOTS TIENTHUAT TOAN
+# SNAPSHOTS TIEN THUAT TOAN
 ```
 # Stop your node 
 sudo systemctl stop bandd
