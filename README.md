@@ -341,7 +341,7 @@ curl https://snapshots.polkachu.com/snapshots/band/band_46142930.tar.lz4 | lz4 -
 mv $HOME/.band/priv_validator_state.json.backup $HOME/.band/data/priv_validator_state.json
 
 sudo systemctl restart bandd && sudo journalctl -u bandd -f --no-hostname -o cat
-Copy
+
 cp $HOME/.band/data/priv_validator_state.json $HOME/.band/priv_validator_state.json.backup
 bandd tendermint unsafe-reset-all --home $HOME/.band
 
@@ -363,3 +363,30 @@ cp $HOME/.band/priv_validator_state.json.backup $HOME/.band/data/priv_validator_
 
 sudo systemctl restart bandd && sudo journalctl -u bandd -f
 ```
+
+# SNAPSHOTS TIENTHUAT TOAN
+```
+# Stop your node 
+sudo systemctl stop bandd
+
+# Back up priv_validator_state.json if needed
+cp $HOME/.band/data/priv_validator_state.json $HOME/.band/priv_validator_state.json.backup
+
+# Reset tendermint chain
+bandd tendermint unsafe-reset-all --home $HOME/.band --keep-addr-book
+```
+```
+# Download the Band snapshot
+wget -O band_latest.tar.lz4 https://snapshots.tienthuattoan.com/mainnet/band/band_latest.tar.lz4
+
+# Decompress the Band snapshot
+lz4 -c -d band_latest.tar.lz4 | tar -x -C $HOME/.band
+
+# Replace with the backed-up priv_validator_state.json
+mv $HOME/.band/priv_validator_state.json.backup $HOME/.band/data/priv_validator_state.json
+```
+```
+sudo systemctl restart bandd
+sudo journalctl -u bandd -f
+```
+
