@@ -191,16 +191,18 @@ sudo rm -rf $HOME/.nibid
 
 **Upgrade**
 ```
-cd $HOME/nibiru/
-git fetch --all
-git checkout v1.4.0
-make install
+cd $HOME
+wget https://github.com/NibiruChain/nibiru/releases/download/v2.12.0/nibid_2.12.0_linux_amd64.tar.gz
+tar -zxvf nibid_2.12.0_linux_amd64.tar.gz
+chmod +x nibid
+mv nibid $(which nibid)
 nibid version --long | grep -e commit -e version
-#version: v1.4.0
-#commit: 9ff225a9859731e9547966dbc7c41f23e00d6b36
-systemctl restart nibid && journalctl -fu nibid -o cat
+#version: v2.8.0
+#commit: 5ff2e0851dc241912aa9e5e636d3656720c41384
+systemctl restart nibid && journalctl -fu nibid -n100 -ocat
 #consensus
 curl -s http://localhost:26657/consensus_state  | jq '.result.round_state.height_vote_set[0].prevotes_bit_array'
+
 ```
 
 Unjail validator
