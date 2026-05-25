@@ -212,6 +212,26 @@ Withdraw and commission from your Validator
 ```
 dungeond tx distribution withdraw-rewards dungeonvaloper14ka9c4pdyz8kchkfvz6ae0guvcz0rfk4yntsjw --from wallet --gas 350000 --chain-id=dungeon-1 --commission -y
 ```
+Vote
+```
+dungeond tx gov vote 35 yes --from wallet --chain-id dungeon-1 --gas 350000 --fees "97500"udgn -y
+```
 
+update
+```
+cd $HOME
+rm -rf dungeonchain 
+git clone https://github.com/Crypto-Dungeon/dungeonchain.git
+cd dungeonchain
+git checkout v6.0.0
+make install
+```
+```
+mkdir -p $HOME/.dungeonchain/cosmovisor/upgrades/v6/bin
+cp $HOME/go/bin/dungeond $HOME/.dungeonchain/cosmovisor/upgrades/v6/bin/
+```
+```
+$HOME/.dungeonchain/cosmovisor/upgrades/v6/bin/dungeond version --long | grep -e commit -e version
+```
 
 
