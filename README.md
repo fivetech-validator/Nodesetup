@@ -28,7 +28,7 @@ cd $HOME && mkdir -p go/bin/
 git clone https://github.com/Crypto-Dungeon/dungeonchain.git
 cd dungeonchain
 git fetch --tags
-git checkout v5.0.0
+git checkout v9.0.0
 make install
 dungeond version
 ```
